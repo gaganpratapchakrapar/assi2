@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>integral university</title>
+</head>
+<script>
+    setInterval(
+    function () {
+      var randomColor = Math.floor(Math.random()*16777215).toString(10);
+      document.body.style.backgroundColor = "#"+randomColor;
+    },2000);
+    </script>
+   
+
+
+<body>
+    
+
+
+    
+    <section> 
+        <a href='index.html'> 
+          <img src='IntegralLogo.jpg' alt='Official logo' width='px' height='50px'> 
+        </a> 
+    </section>
+    
+    <h1 style="text-align: center;color: rgb(5, 48, 96);">REGISTRATION FORM</h1>
+    <form name="RegForm" onsubmit="return VALIDATE()" method="post">
+        <p>A  registration form is a list of fields that a user will input data into and submit to <br>     <strong>  Integral University , Lucknow</strong> </p>
+        
+<p>Name: <input type="text"
+                        size="65" name="Name" /></p>
+
+        <br />
+<p>Age: <input type="number"
+            size="65" name="Age" /></p>
+
+       <br />
+        
+<p>Address: <input type="text"
+                        size="65" name="Address" />
+    </p>
+
+        <br />      
+<p>
+    <br><b> Choose your favroite subject: </b><br>  
+    <input type="radio" id="HINDI" value="HINDI">HINDI<br>   
+    <input type="radio" id="ENG" value="ENG">ENG<br>   
+    <input type="radio" id="MATHs" value="MATHs">MATHs<br>  
+    <input type="radio" id="SCIENCE" value="SCIENCE">SCIENCE<br><br>       
+      
+    <button type="button" onclick=" VALIDATE()"> </button>   
+          
+    <h3 id="disp" style= "color:green"> </h3>  
+    <h4 id="error" style= "color:red"> </h4>  
+    
+
+        </p>
+        <br/>
+<p>Movie: <input type="text"
+            size="65" name="Movie" /></p>
+
+<br />
+<p>Singer: <input type="text"
+    size="65" name="Singer" /></p>
+
+    <br />
+
+        <br />
+        <br />
+        
+<p>Comments: <textarea cols="55"
+                        name="Comment"> </textarea></p>
+
+        
+<p>
+            <input type="submit"
+                value="submit"  name="Submit" style="text-align:right;" />
+            <input type="reset"
+                value="Reset" name="Reset" />
+        </p>
+
+    </form>
+</body>
+<script>
+    function VALIDATE() {
+            
+           
+        var name =
+            document.forms.RegForm.Name.value;
+        
+        var Age =
+            document.forms.RegForm.Age.value;
+        var address =
+            document.forms.RegForm.Address.value;
+        var what =
+            document.forms.RegForm.Subject.value;
+        var Movie =
+            document.forms.RegForm.Movie.value;
+        var Singer =
+         document.forms.RegForm.Singer.value;
+
+        
+       
+        
+        var regAge=/^\d{10}$/;									 
+        var regName = /\d+$/g;
+        var regMovie = /\d+$/g;	
+        var regSinger = /\d+$/g;							 
+
+        if (name == "" || regName.test(name)) {
+            window.alert("Please enter your name properly.");
+            name.focus();
+            return false;
+        }
+
+        if (address == "") {
+            window.alert("Please enter your address.");
+            address.focus();
+            return false;
+        }
+        
+        if (Age == "" || regAge.test(Age)) {
+            alert("Please enter valid Age value.");
+            Age.focus();
+            return false;
+        }
+
+        if(document.getElementById('HINDI').checked) {   
+                document.getElementById("disp").innerHTML   
+                    = document.getElementById("HINDI").value   
+                    + " radio button is checked";   
+            }   
+            else if(document.getElementById('ENG').checked) {   
+                document.getElementById("disp").innerHTML   
+                    = document.getElementById("ENG").value   
+                    + " radio button is checked";     
+            }   
+            else if(document.getElementById('MATHs').checked) {   
+                document.getElementById("disp").innerHTML   
+                    = document.getElementById("MATHs").value   
+                    + " radio button is checked";     
+            }   
+            else if(document.getElementById('SCIENCE').checked) {   
+                document.getElementById("disp").innerHTML   
+                    = document.getElementById("SCIENCE").value   
+                    + " radio button is checked";     
+            }  
+            else {   
+                document.getElementById("error").innerHTML   
+                    = "You have not selected any season";   
+            }   
+          
+    
+    if (Movie == "" || regMovie.test(Movie)) {
+            window.alert("Please enter your movie name properly.");
+            Movie.focus();
+            return false;
+        }
+        if (Singer == "" || regSinger.test(Singer)) {
+            window.alert("Please enter your Singer name properly.");
+            Singer.focus();
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+</html>

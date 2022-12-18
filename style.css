@@ -1,0 +1,23 @@
+
+div {
+	        box-sizing: border-box;
+			width: 100%;
+            border: 100px solid black;
+			float: left;
+			align-content: center;
+			align-items: center;
+		}
+
+		form {
+			margin: 0 auto;
+			width: 600px;
+		}
+body{
+    background-color: azure;
+}
+.editable {
+    width: 360px;
+    height: 120px;
+    border: 1px solid #ccc
+  }
+
